@@ -1,9 +1,10 @@
+var fs = require('fs');
 var express = require('express');
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('This is Hello World from Amit Khanna!');
+  response.sendfile(__dirname+'/index.html');
 });
 
 var port = process.env.PORT || 5000;
